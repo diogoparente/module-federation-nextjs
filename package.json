@@ -1,0 +1,20 @@
+{
+  "name": "module-federation-nextjs",
+  "author": "diogoparente",
+  "private": true,
+  "workspaces": [
+    "./remote",
+    "./host",
+    "./shared"
+  ],
+  "version": "0.0.0",
+  "scripts": {
+    "start": "find . -type d -name '.next' -exec rm -rf {} + && concurrently \"cd remote; npm run dev\" \"cd host; npm run dev\"",
+    "build": "find . -type d -name '.next' -exec rm -rf {} +  && concurrently \"cd remote; npm run build\" \"cd host; npm run build\"",
+    "serve": "concurrently \"cd remote; npm run start\" \"cd host; npm run start\"",
+    "e2e:ci": "yarn start & wait-on http-get://localhost:3000/ && npx cypress run --config-file ../cypress/config/cypress.config.ts --config '{\"supportFile\": \"../cypress/support/e2e.ts\"}' --spec \"./e2e/*.cy.ts\" --browser=chrome"
+  },
+  "dependencies": {
+    "concurrently": "^7.0.0"
+  }
+}
