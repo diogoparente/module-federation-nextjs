@@ -14,9 +14,9 @@ module.exports = {
         name: "remote",
         filename: "static/chunks/remoteEntry.js",
         exposes: {
-          "./title": "./components/title/title.js",
-          "./remote": "./pages/remote.js",
-          "./pages-map": "./pages-map.js",
+          "./title": "./components/title/title.tsx",
+          "./remote": "./pages/remote.tsx",
+          "./pages-map": "./pages-map.ts",
         },
         remotes: remotes(options.isServer),
         shared: {},

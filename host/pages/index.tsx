@@ -24,8 +24,8 @@ const Host = () => {
   );
 };
 //
-Host.getInitialProps = async (ctx) => {
-  return {};
-};
+// Host.getInitialProps = async (ctx) => {
+//   return {};
+// };
 
 export default Host;

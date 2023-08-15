@@ -1,6 +1,6 @@
 import App from "next/app";
 import Nav from "../components/nav";
-import GlobalStyles from "../components/globalStyles";
+import GlobalStyles from "../styles/globalStyles";
 
 function MyApp({ Component, pageProps }) {
   return (

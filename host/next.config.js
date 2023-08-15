@@ -14,9 +14,9 @@ module.exports = {
         name: "host",
         filename: "static/chunks/remoteEntry.js",
         exposes: {
-          "./nav": "./components/nav.js",
-          "./host": "./pages/index.js",
-          "./pages-map": "./pages-map.js",
+          "./nav": "./components/nav.tsx",
+          "./host": "./pages/index.tsx",
+          "./pages-map": "./pages-map.ts",
         },
         remotes: remotes(options.isServer),
         shared: {},
