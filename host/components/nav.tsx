@@ -12,7 +12,7 @@ const NavLink = ({ children, href }) => {
 const Nav = () => (
   <nav style={{ display: "flex", height: "4rem", alignItems: "center" }}>
     <NavLink href="/">Host</NavLink>
-    <NavLink href="/remote">Remote</NavLink>
+    <NavLink href="/remote/react">React remote</NavLink>
   </nav>
 );
 

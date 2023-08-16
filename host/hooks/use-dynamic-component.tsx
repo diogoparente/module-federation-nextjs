@@ -7,8 +7,7 @@ export interface ModuleProps {
   url: string;
 }
 
-function loadComponent(props: Omit<ModuleProps, "url">) {
-  const { scope, module } = props;
+function loadComponent({ scope, module }: Omit<ModuleProps, "url">) {
   return async () => {
     // Initializes the share scope. This fills it with known provided modules from this build and all remotes
     await __webpack_init_sharing__("default");
@@ -26,14 +25,11 @@ function ModuleLoader({ url, module, scope }: ModuleProps) {
     url: module && url,
   });
 
-  if (!module) {
-    return <h2>Not Remote Module specified</h2>;
-  }
-
   if (!ready) {
-    return <h2>Loading dynamic script: {url}</h2>;
+    return null;
   }
 
+  // we probably want something else here
   if (failed) {
     return <h2>Failed to load dynamic script: {url}</h2>;
   }
